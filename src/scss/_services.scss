@@ -1,0 +1,129 @@
+.services {
+  @include blockWrapper;
+  margin-bottom: 7rem;
+  position: relative;
+  z-index: 30;
+  margin-top: -2rem;
+}
+
+.services__content {
+  @include blockContent;
+  padding: 0 var(--side-padding);
+  border-radius: 2rem;
+  background: white;
+  padding-bottom: 6.4rem;
+  padding-top: 7.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.services__top-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+  align-items: flex-start;
+  margin-bottom: 8rem;
+}
+
+.services__heading {
+  @include sectionHeading;
+}
+
+.services__text {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-top: 1.5rem;
+}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+}
+
+.services__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 3.2rem 2.4rem;
+  border-radius: 1rem;
+  border: 1px solid #02073e;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      background: #fff6ef;
+      border-color: #fff6ef;
+
+      .services__card-text {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+
+      .services__card-icon {
+        transform: scale(1);
+      }
+
+      .services__card-btn {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+    }
+  }
+}
+
+.services__card-title {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  text-align: center;
+  min-height: 2.2em;
+  margin-bottom: 3.2rem;
+}
+
+.services__card-text {
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 3.2rem;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.services__card-icon {
+  width: 10.8rem;
+  height: 10.8rem;
+  object-fit: contain;
+  align-self: center;
+  margin-bottom: 3.2rem;
+  transition: transform 0.3s;
+  transform: translateY(3.5rem) scale(1.4);
+}
+
+.services__card-btn {
+  margin-top: auto;
+  align-self: center;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.026rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}

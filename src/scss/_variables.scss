@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #f68f46;
+  --text-color: #02073e;
+  --blue-text: #a2a5c3;
+  --bg: #f5f6f6;
+  --suisse: "Suisse Intl", sans-serif;
+  --content-padding: 3.5rem;
+  --container-width: 137rem;
+  --side-padding: 5.4rem;
+
+  @include breakpoint(mobile) {
+    --content-padding: 1.6rem;
+  }
+}

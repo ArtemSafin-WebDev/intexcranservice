@@ -1,0 +1,44 @@
+.geography {
+  @include blockWrapper;
+  margin-bottom: 11rem;
+}
+
+.geography__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.geography__map-wrapper {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.geography__map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.geography__top-row {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+  padding-top: 5rem;
+  align-items: flex-start;
+}
+
+.geography__heading {
+  @include sectionHeading;
+}
+
+.geography__text {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-top: 1.6rem;
+}
