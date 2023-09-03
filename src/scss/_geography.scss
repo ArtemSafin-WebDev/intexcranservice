@@ -1,12 +1,22 @@
 .geography {
   @include blockWrapper;
   margin-bottom: 11rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
 }
 
 .geography__content {
   @include blockContent;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
 }
 
 .geography__map-wrapper {
@@ -29,6 +39,14 @@
   grid-gap: 1.8rem;
   padding-top: 5rem;
   align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    order: -10;
+    padding: 0;
+  }
 }
 
 .geography__heading {
@@ -41,4 +59,12 @@
   font-weight: 450;
   line-height: normal;
   margin-top: 1.6rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    margin: 0;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+  }
 }

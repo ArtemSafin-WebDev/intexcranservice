@@ -9,22 +9,26 @@ export default function fixedSections() {
   );
 
   elements.forEach((element) => {
-    ScrollTrigger.create({
-      trigger: element,
-      start: "top top",
-      pin: element,
-      pinSpacing: false,
-      end: () => `top+=${element.offsetHeight} top`,
-      onLeave: () => {
-        gsap.set(element, {
-          autoAlpha: 0,
-        });
-      },
-      onEnterBack: () => {
-        gsap.set(element, {
-          autoAlpha: 1,
-        });
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 641px)", () => {
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top top",
+        pin: element,
+        pinSpacing: false,
+        end: () => `top+=${element.offsetHeight} top`,
+        onLeave: () => {
+          gsap.set(element, {
+            autoAlpha: 0,
+          });
+        },
+        onEnterBack: () => {
+          gsap.set(element, {
+            autoAlpha: 1,
+          });
+        },
+      });
     });
   });
 }

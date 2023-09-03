@@ -64,4 +64,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 6.2rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }

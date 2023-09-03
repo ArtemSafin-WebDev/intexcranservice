@@ -1,0 +1,120 @@
+.service-cases {
+  @include blockWrapper;
+  margin-top: -3.5rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(mobile) {
+    margin-top: -3rem;
+  }
+}
+
+.service-cases__content {
+  @include blockContent;
+  border-radius: 2rem;
+  background: white;
+  padding: 0 var(--side-padding);
+  padding-top: 5.5rem;
+  padding-bottom: 13.5rem;
+
+  @include breakpoint(mobile) {
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    padding-top: 3rem;
+    padding-bottom: 13rem;
+    border-radius: 1.5rem 1.5rem 0px 0px;
+  }
+}
+
+.service-cases__heading {
+  @include sectionHeading;
+  margin-bottom: 5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.service-cases__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 4rem;
+    align-items: stretch;
+  }
+}
+
+.service-cases__text {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  max-width: 45rem;
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+  }
+}
+
+.service-cases__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 5rem;
+  grid-row-gap: 4rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 2rem;
+    grid-row-gap: 3rem;
+  }
+}
+
+.service-cases__list-item {
+  display: flex;
+  flex-direction: column;
+  &::before {
+    display: none;
+  }
+}
+
+.service-cases__card {
+  &::before {
+    content: counter(ordered-list, decimal-leading-zero);
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    display: block;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #e2e4eb;
+    color: var(--primary-color);
+    @include breakpoint(mobile) {
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 450;
+      line-height: normal;
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.service-cases__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

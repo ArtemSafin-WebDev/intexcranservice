@@ -4,6 +4,10 @@
   position: relative;
   z-index: 30;
   margin-top: -2rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
 }
 
 .services__content {
@@ -15,6 +19,14 @@
   padding-top: 7.5rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+
+  @include breakpoint(mobile) {
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    padding-bottom: 6.2rem;
+    padding-top: 3rem;
+    border-radius: 1.5rem;
+  }
 }
 
 .services__top-row {
@@ -23,6 +35,14 @@
   grid-gap: 1.8rem;
   align-items: flex-start;
   margin-bottom: 8rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    align-items: stretch;
+  }
 }
 
 .services__heading {
@@ -35,12 +55,45 @@
   font-weight: 450;
   line-height: normal;
   margin-top: 1.5rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    margin: 0;
+  }
 }
 
-.services__list {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-gap: 1.8rem;
+.services__slider {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .swiper-wrapper {
+    @include breakpointMF(small-tablet) {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-gap: 1.8rem;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .swiper-slide {
+      width: 22.5rem;
+
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .services__list-item {
@@ -56,28 +109,36 @@
   border-radius: 1rem;
   border: 1px solid #02073e;
   transition: background-color 0.2s, border-color 0.2s;
+  flex-grow: 1;
 
-  @media (hover: hover) {
-    &:hover {
-      background: #fff6ef;
-      border-color: #fff6ef;
+  @include breakpointMF(small-tablet) {
+    @media (hover: hover) {
+      &:hover {
+        background: #fff6ef;
+        border-color: #fff6ef;
 
-      .services__card-text {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.3s, visibility 0.3s;
-      }
+        .services__card-text {
+          opacity: 1;
+          visibility: inherit;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
 
-      .services__card-icon {
-        transform: scale(1);
-      }
+        .services__card-icon {
+          transform: scale(1);
+        }
 
-      .services__card-btn {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.3s, visibility 0.3s;
+        .services__card-btn {
+          opacity: 1;
+          visibility: inherit;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
       }
     }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 2rem 1.6rem;
+    border-radius: 0.6rem;
   }
 }
 
@@ -89,28 +150,59 @@
   text-align: center;
   min-height: 2.2em;
   margin-bottom: 3.2rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    margin-bottom: 2.4rem;
+    min-height: 4rem;
+  }
 }
 
 .services__card-text {
-  text-align: center;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 3.2rem;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
-  opacity: 0;
-  visibility: hidden;
+  @include breakpointMF(small-tablet) {
+    text-align: center;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 3.2rem;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 3rem;
+    order: 10;
+    text-align: center;
+  }
 }
 
 .services__card-icon {
-  width: 10.8rem;
-  height: 10.8rem;
-  object-fit: contain;
-  align-self: center;
-  margin-bottom: 3.2rem;
-  transition: transform 0.3s;
-  transform: translateY(3.5rem) scale(1.4);
+  @include breakpointMF(small-tablet) {
+    width: 10.8rem;
+    height: 10.8rem;
+    object-fit: contain;
+    align-self: center;
+    margin-bottom: 3.2rem;
+    transition: transform 0.3s;
+    transform: translateY(3.5rem) scale(1.4);
+  }
+
+  @include breakpoint(mobile) {
+    width: 7.5rem;
+    height: 7.5rem;
+    align-self: center;
+    margin-bottom: 2rem;
+    object-fit: contain;
+  }
 }
 
 .services__card-btn {
@@ -126,4 +218,16 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+  @include breakpoint(mobile) {
+    order: 20;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.018rem;
+    text-transform: uppercase;
+    opacity: 1;
+    visibility: inherit;
+  }
 }

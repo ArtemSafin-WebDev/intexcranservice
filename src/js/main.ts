@@ -7,8 +7,13 @@ import introSlider from "./intro-slider";
 import cardsStacking from "./cardsStacking";
 import fixedSections from "./fixedSections";
 import smoothScrolling from "./smoothScrolling";
+import accordions from "./accordion";
+import menu from "./menu";
+import servicesSlider from "./servicesSlider";
+import needsService from "./needsService";
 
 document.addEventListener("DOMContentLoaded", () => {
+  menu();
   smoothScrolling();
   pressCenter();
   technic();
@@ -16,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   introSlider();
   cardsStacking();
   fixedSections();
+  accordions();
+  servicesSlider();
+  needsService();
 });
 
 window.addEventListener("load", () => {

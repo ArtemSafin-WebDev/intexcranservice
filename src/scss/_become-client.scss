@@ -4,6 +4,11 @@
   margin-top: -8.8rem;
   position: relative;
   z-index: 30;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3rem;
+    margin-top: -3.8rem;
+  }
 }
 
 .become-client__content {
@@ -14,6 +19,19 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   padding: 2.2rem var(--side-padding);
+
+  @include breakpoint(mobile) {
+    border-radius: 1.5rem;
+    padding: 3rem var(--content-padding);
+    margin: 0 calc(-1 * var(--content-padding));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 1.8rem;
+    grid-row-gap: 1rem;
+    align-content: flex-start;
+    grid-template-areas: "title arrow" "text arrow";
+    grid-column-gap: 5rem;
+  }
 }
 
 .become-client__heading {
@@ -22,6 +40,14 @@
   font-weight: 500;
   line-height: 5rem;
   color: var(--primary-color);
+
+  @include breakpoint(mobile) {
+    grid-area: title;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+  }
 }
 
 .become-client__wrapper {
@@ -29,6 +55,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .become-client__text {
@@ -38,6 +68,15 @@
   line-height: normal;
   color: #a2a5c3;
   max-width: 26.4rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    max-width: none;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    grid-area: text;
+  }
 }
 
 .become-client__arrow {
@@ -45,7 +84,7 @@
   height: 16rem;
   display: grid;
   place-items: center;
-  padding: 2.4rem;
+
   border-radius: 2rem;
   background: #f5f6f6;
   flex-shrink: 0;
@@ -53,8 +92,8 @@
   transition: background-color 0.2s;
   svg {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 6.2rem;
+    height: 6.2rem;
     fill: var(--primary-color);
     transition: fill 0.2s;
   }
@@ -65,6 +104,19 @@
       svg {
         fill: white;
       }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    width: 7rem;
+    height: 7rem;
+    margin: 0;
+    border-radius: 0.6rem;
+    grid-area: arrow;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
     }
   }
 }
