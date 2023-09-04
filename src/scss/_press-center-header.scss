@@ -1,0 +1,113 @@
+.press-center-header {
+  @include blockWrapper;
+  margin-bottom: 2rem;
+}
+
+.press-center-header__content {
+  @include blockContent;
+  padding: 0 var(--side-padding);
+  padding-top: 6.6rem;
+  padding-bottom: 4rem;
+
+  background-color: #fff;
+  border-radius: 2rem;
+
+  @include breakpoint(mobile) {
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    padding-top: 5.2rem;
+    padding-bottom: 3.3rem;
+    border-radius: 1.5rem;
+  }
+}
+
+.press-center-header__main-heading {
+  font-size: 6.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 13rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 9rem;
+  }
+}
+
+.press-center-header__nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  @include breakpoint(mobile) {
+    flex-wrap: nowrap;
+    gap: 0.8rem;
+    width: auto;
+    align-self: stretch;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    padding-bottom: 1.5rem;
+    margin-bottom: -1.5rem;
+
+    @include noScrollbar;
+  }
+}
+
+.press-center-header__nav-list-item {
+  flex-shrink: 0;
+}
+
+.press-center-header__nav-link {
+  display: block;
+  padding: 1.8rem 2.5rem;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.026rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  border: 1px solid #02073e;
+  color: #02073e;
+  &:link,
+  &:visited {
+    color: #02073e;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--primary-color);
+
+      color: var(--primary-color);
+    }
+  }
+
+  &.active {
+    background: #fff6ef;
+    border-color: #fff6ef;
+    color: var(--primary-color);
+    cursor: default;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.018rem;
+    text-transform: uppercase;
+    padding: 1.5rem 2rem;
+    border-radius: 0.6rem;
+  }
+}
