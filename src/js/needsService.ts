@@ -33,7 +33,7 @@ export default function needsService() {
             if (form) {
               form.reset();
             }
-            if (res.data.status === "mail_sent" && successLayer) {
+            if (successLayer) {
               successLayer.classList.add("active");
               setTimeout(() => {
                 successLayer.classList.remove("active");

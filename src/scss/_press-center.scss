@@ -1,5 +1,12 @@
 .press-center {
   @include blockWrapper;
+  &:last-child {
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .press-center__content {
@@ -16,6 +23,10 @@
     padding-top: 3rem;
     padding-bottom: 9.4rem;
     border-radius: 1.5rem;
+
+    .press-center:last-child & {
+      padding-bottom: 4rem;
+    }
   }
 }
 
