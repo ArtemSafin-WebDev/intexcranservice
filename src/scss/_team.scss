@@ -1,0 +1,335 @@
+.team {
+  @include blockWrapper;
+  margin-bottom: 6rem;
+  position: relative;
+  z-index: 10;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.team__content {
+  @include blockContent;
+  border-radius: 2rem;
+  background: white;
+
+  @include breakpoint(mobile) {
+    margin: 0 calc(-1 * var(--content-padding));
+    border-radius: 1.5rem;
+  }
+}
+
+.team__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: var(--side-padding);
+  padding-bottom: 6rem;
+
+  @include breakpoint(mobile) {
+    padding: 0 var(--content-padding);
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.team__top-row {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+  margin-bottom: 12rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: stretch;
+  }
+}
+
+.team__heading {
+  @include sectionHeading;
+}
+
+.team__text {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+  }
+}
+
+.team__tabs {
+}
+
+.team__tabs-nav {
+  margin-bottom: 5.6rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.team__tabs-nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include breakpoint(mobile) {
+    flex-wrap: nowrap;
+    gap: 0.8rem;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+    padding-bottom: 1rem;
+    margin-bottom: -1rem;
+
+    @include noScrollbar;
+  }
+}
+
+.team__tabs-nav-list-item {
+  flex-shrink: 0;
+}
+
+.team__tabs-nav-link {
+  display: block;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.026rem;
+  text-transform: uppercase;
+  padding: 1.8rem 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid #02073e;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  color: #02073e;
+  &:link,
+  &:visited {
+    color: #02073e;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+
+  &.active {
+    background: #fff6ef;
+    border-color: #fff6ef;
+    color: var(--primary-color);
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.018rem;
+    text-transform: uppercase;
+    padding: 1.5rem 2rem;
+    border-radius: 0.6rem;
+  }
+}
+
+.team__tabs-items {
+  position: relative;
+}
+
+.team__tabs-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+  &.active {
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+}
+
+.team__list {
+  display: grid;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include breakpoint(mobile) {
+    grid-gap: 1.8rem;
+  }
+}
+
+.team__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.team__card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border: 1px solid #a2a5c3;
+  border-radius: 2rem;
+  grid-template-areas: "photo text";
+  @include breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 0.6rem;
+    grid-template-areas: "photo" "text";
+  }
+}
+
+.team__card-photo-container {
+  position: relative;
+  width: 24.4rem;
+  border-radius: calc(2rem - 1px);
+  overflow: hidden;
+  grid-area: photo;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  @include breakpoint(mobile) {
+    width: 100%;
+    border-radius: calc(0.6rem - 1px);
+  }
+}
+
+.team__card-photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team__card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  padding-left: 2.5rem;
+  gap: 1rem;
+  grid-area: text;
+
+  @include breakpoint(mobile) {
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    gap: 0.4rem;
+    justify-content: flex-start;
+  }
+}
+
+.team__card-name {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  width: min-content;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+  }
+}
+
+.team__card-role {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 2rem;
+  color: #a2a5c3;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 1.5rem;
+  }
+}
+
+.team__become-part {
+  border-radius: 2rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 2.2rem;
+  padding-left: var(--side-padding);
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  justify-content: space-between;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 3.6rem var(--content-padding);
+    gap: 5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+.team__become-part-text {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 5rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+
+.team__become-part-arrow {
+  display: grid;
+  place-items: center;
+  border-radius: 2rem;
+  background: #ffa565;
+  width: 16rem;
+  height: 16rem;
+  flex-shrink: 0;
+
+  svg {
+    fill: white;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  @include breakpoint(mobile) {
+    width: 7.2rem;
+    height: 7.2rem;
+    border-radius: 0.6rem;
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}

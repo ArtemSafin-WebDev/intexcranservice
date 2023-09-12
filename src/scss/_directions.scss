@@ -1,11 +1,19 @@
 .directions {
   @include blockWrapper;
   position: relative;
-  z-index: 8;
+  z-index: 10;
   margin-top: -5.5rem;
+
+  &--standalone {
+    margin-bottom: 8rem;
+  }
 
   @include breakpoint(mobile) {
     margin-top: -3rem;
+
+    &--standalone {
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -15,8 +23,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 1.8rem;
   background-color: white;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-radius: 2rem;
   overflow: hidden;
 
   @include breakpoint(mobile) {
@@ -182,12 +189,15 @@
     margin: 0 calc(-1 * var(--content-padding));
     padding: 0 var(--content-padding);
     padding-top: 3rem;
-    padding-bottom: 8rem;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
+    padding-bottom: 5rem;
+    border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
     background-color: white;
+
+    .directions--standalone & {
+      padding-bottom: 2rem;
+    }
   }
 }
 

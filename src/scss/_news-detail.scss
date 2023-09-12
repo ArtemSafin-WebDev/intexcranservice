@@ -22,6 +22,7 @@
   padding: var(--side-padding);
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-gap: 1.8rem;
   grid-row-gap: 6rem;
 
   @include breakpoint(mobile) {

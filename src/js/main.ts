@@ -11,9 +11,13 @@ import accordions from "./accordion";
 import menu from "./menu";
 import servicesSlider from "./servicesSlider";
 import needsService from "./needsService";
+import trusted from "./trusted";
+import history from "./history";
+import tabs from "./tabs";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
+  tabs();
   smoothScrolling();
   pressCenter();
   technic();
@@ -24,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions();
   servicesSlider();
   needsService();
+  trusted();
+  history();
 });
 
 window.addEventListener("load", () => {
