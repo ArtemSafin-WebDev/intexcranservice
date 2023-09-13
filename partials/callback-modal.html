@@ -1,0 +1,85 @@
+<dialog class="callback-modal" data-lenis-prevent="">
+    <div class="callback-modal__main-inner active">
+        <button class="callback-modal__close js-close-callback-modal">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+        <h3 class="callback-modal__heading">
+            Заполните форму
+        </h3>
+        <div class="callback-modal__text">
+            Заполните форму и менеджер свяжется с вами в течение нескольких минут
+        </div>
+        <form action="/" method="POST" class="callback-modal__form">
+            <div class="callback-modal__form-fields">
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="text" class="callback-modal__form-input" name="name" placeholder="Имя" required="">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="tel" class="callback-modal__form-input" name="phone" placeholder="Телефон"
+                            required="">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field callback-modal__form-field--fullwidth">
+                    <div class="callback-modal__form-input-wrapper">
+                        <textarea name="comment" class="callback-modal__form-input"
+                            placeholder="Комментарии"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="callback-modal__form-submit" type="submit">
+                Отправить
+                <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </button>
+            <div class="callback-modal__form-policy">
+                <label class="callback-modal__form-policy-checkbox">
+                    <input type="checkbox" name="policy" value="Y" class="callback-modal__form-policy-checkbox-input"
+                        checked="" required="">
+                    <span class="callback-modal__form-policy-checkbox-mark">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+                    <span class="callback-modal__form-policy-checkbox-text">
+                        Я согласен на <a href="#">обработку персональных данных</a>
+                    </span>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="callback-modal__success-inner">
+        <h3 class="callback-modal__heading">
+            Заполните форму
+        </h3>
+        <div class="callback-modal__text">
+            Заполните форму и менеджер свяжется с вами в течение нескольких минут
+        </div>
+        <button class="callback-modal__success-btn" type="button">
+            Хорошо
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#arrow-right"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="callback-modal__error-inner">
+        <h3 class="callback-modal__heading">
+            Ошибка
+        </h3>
+        <div class="callback-modal__text">
+            Что-то пошло не так. Попробуйте снова
+        </div>
+        <button class="callback-modal__reset-btn" type="button">
+            Попробовать снова
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#arrow-right"></use>
+            </svg>
+        </button>
+    </div>
+
+</dialog>

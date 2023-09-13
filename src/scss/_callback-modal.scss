@@ -1,0 +1,404 @@
+.callback-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: var(--content-padding);
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 0;
+  }
+}
+
+.callback-modal__main-inner {
+  border-radius: 2rem;
+  background: white;
+  padding: 3.2rem 4rem;
+  padding-bottom: 4rem;
+  color: #02073e;
+  position: relative;
+  margin: auto;
+  max-width: 70rem;
+  width: 100%;
+  display: none;
+  flex-shrink: 0;
+  &.active {
+    display: block;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 3rem var(--content-padding);
+    border-radius: 1.5rem;
+  }
+}
+
+.callback-modal__success-inner {
+  border-radius: 2rem;
+  background: white;
+  padding: 4rem;
+  padding-top: 3.2rem;
+  color: #02073e;
+  position: relative;
+  margin: auto;
+  max-width: 44.4rem;
+  width: 100%;
+  display: none;
+  flex-shrink: 0;
+
+  &.active {
+    display: block;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 3rem var(--content-padding);
+    border-radius: 1.5rem;
+  }
+}
+
+.callback-modal__error-inner {
+  border-radius: 2rem;
+  background: white;
+  padding: 4rem;
+  padding-top: 3.2rem;
+  color: #02073e;
+  position: relative;
+  margin: auto;
+  max-width: 44.4rem;
+  width: 100%;
+  display: none;
+  flex-shrink: 0;
+
+  &.active {
+    display: block;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 3rem var(--content-padding);
+    border-radius: 1.5rem;
+  }
+}
+
+.callback-modal__close {
+  position: absolute;
+  right: 2.4rem;
+  top: 2.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+
+  @include breakpoint(mobile) {
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: #a2a5c3;
+    transition: fill 0.2s;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      svg {
+        fill: #02073e;
+      }
+    }
+  }
+}
+
+.callback-modal__heading {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-bottom: 0.8rem;
+}
+
+.callback-modal__text {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  color: #a2a5c3;
+  margin-bottom: 4rem;
+  max-width: 42rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    margin-bottom: 4rem;
+    max-width: none;
+    max-width: 26.4rem;
+  }
+}
+
+.callback-modal__form {
+  display: flex;
+  flex-direction: column;
+
+  .validation-error {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-top: 0.4rem;
+    color: var(--primary-color);
+  }
+}
+
+.callback-modal__form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.8rem;
+  margin-bottom: 1.8rem;
+  @include breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.callback-modal__form-field--fullwidth {
+  grid-column: 1 / -1;
+}
+
+.callback-modal__form-input {
+  display: block;
+  width: 100%;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 3rem;
+  border-radius: 1rem;
+  background: #f5f6f6;
+  color: #02073e;
+  height: 6rem;
+  border: 1px solid #f5f6f6;
+  transition: color 0.2s, border-color 0.2s;
+  resize: none;
+
+  &.not-valid {
+    border-color: var(--primary-color);
+  }
+  &::placeholder {
+    color: #a2a5c3;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 4.8rem;
+    padding: 0 1.8rem;
+    border-radius: 0.6rem;
+  }
+}
+
+textarea.callback-modal__form-input {
+  padding-top: 1.9rem;
+  padding-bottom: 1.9rem;
+  @include breakpoint(mobile) {
+    height: 7.8rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+}
+
+.callback-modal__form-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: space-between;
+  padding: 1.8rem 2rem;
+  padding-left: 2.6rem;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.026rem;
+  text-transform: uppercase;
+  transition: color 0.2s, background-color 0.2s;
+  margin-bottom: 3rem;
+  background-color: #02073e;
+  color: white;
+  border-radius: 1rem;
+
+  svg {
+    fill: currentColor;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.018rem;
+    padding-left: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    border-radius: 0.6rem;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.callback-modal__form-policy {
+  display: block;
+}
+
+.callback-modal__form-policy-checkbox {
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.callback-modal__form-policy-checkbox-input {
+  display: none;
+}
+
+.callback-modal__form-policy-checkbox-mark {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.4rem;
+  background: #1d225a;
+
+  svg {
+    width: 1.7rem;
+    height: 1.7rem;
+    fill: white;
+    transition: opacity 0.2s;
+    opacity: 0;
+  }
+}
+
+.callback-modal__form-policy-checkbox-input:checked
+  ~ .callback-modal__form-policy-checkbox-mark {
+  svg {
+    opacity: 1;
+  }
+}
+
+.callback-modal__form-policy-checkbox-text {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #a2a5c3;
+
+  a {
+    color: #02073e;
+    transition: color 0.2s, text-decoration-color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    &:link,
+    &:visited {
+      color: #02073e;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration-color: #02073e;
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.callback-modal__reset-btn,
+.callback-modal__success-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: space-between;
+  padding: 1.8rem 2rem;
+  padding-left: 2.6rem;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.026rem;
+  text-transform: uppercase;
+  transition: color 0.2s, background-color 0.2s;
+
+  background-color: #02073e;
+  color: white;
+  border-radius: 1rem;
+
+  svg {
+    fill: currentColor;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.018rem;
+    padding-left: 2.2rem;
+    text-transform: uppercase;
+    border-radius: 0.6rem;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.callback-modal__reset-btn {
+  margin-bottom: 0;
+}

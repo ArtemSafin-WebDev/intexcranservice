@@ -14,6 +14,7 @@ import needsService from "./needsService";
 import trusted from "./trusted";
 import history from "./history";
 import tabs from "./tabs";
+import callbackModal from "./callbackModal";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   needsService();
   trusted();
   history();
+  callbackModal();
 });
 
 window.addEventListener("load", () => {
