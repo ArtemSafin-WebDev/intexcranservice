@@ -1,0 +1,60 @@
+<section class="need-service need-service--standalone">
+    <div class="need-service__content">
+        <h2 class="need-service__heading">
+            Остались вопросы?
+        </h2>
+        <form action="/" method="POST" class="need-service__form js-needs-service-form">
+            <div class="need-service__form-text">
+                Заполните форму и менеджер свяжется с вами в течение нескольких минут
+            </div>
+            <div class="need-service__fields">
+                <div class="need-service__field">
+                    <div class="need-service__input-wrapper">
+                        <input type="text" class="need-service__input" name="name" placeholder="Имя" required="">
+                    </div>
+                </div>
+                <div class="need-service__field">
+                    <div class="need-service__input-wrapper">
+                        <input type="tel" class="need-service__input" name="phone" placeholder="Телефон" required="">
+                    </div>
+                </div>
+                <div class="need-service__field need-service__field--fullwidth">
+                    <div class="need-service__input-wrapper">
+                        <textarea class="need-service__input" name="comment" placeholder="Комментарии"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="need-service__submit" type="submit">
+                Отправить
+                <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </button>
+            <div class="need-service__policy">
+                <label class="need-service__policy-checkbox">
+                    <input type="checkbox" name="policy" class="need-service__policy-checkbox-input" required=""
+                        checked="">
+                    <span class="need-service__policy-checkbox-mark">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+                    <span class="need-service__policy-text">
+                        Я согласен на <a href="#">обработку персональных данных</a>
+                    </span>
+                </label>
+            </div>
+        </form>
+        <div class="need-service__success">
+            <div class="need-service__success-row">
+                <h2 class="need-service__success-heading">
+                    Спасибо вам за обращение!
+                </h2>
+                <div class="need-service__success-text">
+                    Наш менеджер свяжется с вами в течении дня и ответит на все вопросы
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

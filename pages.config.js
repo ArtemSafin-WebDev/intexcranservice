@@ -1,3 +1,4 @@
+import documents from "./pages-data/documents";
 import home from "./pages-data/home";
 import newsDetail from "./pages-data/news-detail";
 import pressCenter from "./pages-data/press-center";
@@ -8,6 +9,7 @@ const pagesConfig = {
   ...service,
   ...pressCenter,
   ...newsDetail,
+  ...documents,
 };
 
 export default pagesConfig;

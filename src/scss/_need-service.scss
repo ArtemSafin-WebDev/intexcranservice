@@ -4,8 +4,17 @@
   position: relative;
   z-index: 1;
 
+  &--standalone {
+    margin-bottom: 6rem;
+    margin-top: 0;
+  }
+
   @include breakpoint(mobile) {
     margin-top: -8.8rem;
+    &--standalone {
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -35,6 +44,10 @@
     background-image: url("../images/needs-service-mobile-bg.svg");
     background-position: left top;
     background-size: 100% auto;
+
+    .need-service--standalone & {
+      padding-bottom: 3rem;
+    }
   }
 }
 

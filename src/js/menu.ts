@@ -9,7 +9,9 @@ export default function menu() {
   });
 
   const links = Array.from(
-    document.querySelectorAll<HTMLLinkElement>(".page-header__mobile-menu a")
+    document.querySelectorAll<HTMLLinkElement>(
+      ".page-header__mobile-menu a, .page-header__mobile-menu button"
+    )
   );
 
   links.forEach((link) =>
