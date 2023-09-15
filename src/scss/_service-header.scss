@@ -127,3 +127,73 @@
     display: none;
   }
 }
+
+.service-header__advantages {
+  grid-column: 2 / 7;
+  padding-right: 10rem;
+
+  @include breakpoint(mobile) {
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+}
+
+.service-header__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 7.5rem;
+  row-gap: 3.8rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 2rem;
+  }
+}
+
+.service-header__list-item {
+  display: flex;
+  flex-direction: column;
+  &::before {
+    display: none;
+  }
+}
+
+.service-header__card {
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: counter(ordered-list, decimal-leading-zero);
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    color: #f68f46;
+    display: block;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #a2a5c3;
+
+    @include breakpoint(mobile) {
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 450;
+      line-height: normal;
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.service-header__card-text {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

@@ -15,6 +15,10 @@ import trusted from "./trusted";
 import history from "./history";
 import tabs from "./tabs";
 import callbackModal from "./callbackModal";
+import craneSlider from "./craneSlider";
+import benefits from "./benefits";
+import employeeReviews from "./employeeReviews";
+import fileUpload from "./fileUpload";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -32,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   trusted();
   history();
   callbackModal();
+  craneSlider();
+  benefits();
+  employeeReviews();
+  fileUpload();
 });
 
 window.addEventListener("load", () => {

@@ -1,6 +1,7 @@
 .distributor {
   @include blockWrapper;
-
+  position: relative;
+  z-index: 10;
   margin-top: -5.5rem;
 }
 
@@ -156,5 +157,21 @@
   @include breakpoint(mobile) {
     width: 7.5rem;
     height: 7.5rem;
+  }
+}
+
+.distributor__card-text {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  text-align: center;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    color: #a2a5c3;
   }
 }

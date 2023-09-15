@@ -4,8 +4,16 @@
   position: relative;
   z-index: 10;
 
+  &--short {
+    margin-top: -15rem;
+  }
+
   @include breakpoint(mobile) {
     margin-bottom: 3rem;
+
+    &--short {
+      margin-top: -6rem;
+    }
   }
 }
 
