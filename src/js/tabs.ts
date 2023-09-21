@@ -27,6 +27,14 @@ export default function tabs() {
       btns[index].classList.add("active");
       items[index].classList.add("active");
 
+      const event = new CustomEvent("tabchange", {
+        detail: {
+          tab: items[index],
+        },
+      });
+
+      document.dispatchEvent(event);
+
       Flip.from(state, {
         ease: "power1.inOut",
         duration: 0.4,

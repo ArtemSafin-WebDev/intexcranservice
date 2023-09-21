@@ -4,6 +4,7 @@ import newsDetail from "./pages-data/news-detail";
 import pressCenter from "./pages-data/press-center";
 import service from "./pages-data/service";
 import career from "./pages-data/career";
+import contacts from "./pages-data/contacts";
 
 const pagesConfig = {
   ...home,
@@ -12,6 +13,7 @@ const pagesConfig = {
   ...newsDetail,
   ...documents,
   ...career,
+  ...contacts,
 };
 
 export default pagesConfig;

@@ -19,6 +19,7 @@ import craneSlider from "./craneSlider";
 import benefits from "./benefits";
 import employeeReviews from "./employeeReviews";
 import fileUpload from "./fileUpload";
+import contacts from "./contacts";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   benefits();
   employeeReviews();
   fileUpload();
+  contacts();
 });
 
 window.addEventListener("load", () => {
