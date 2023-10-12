@@ -6,6 +6,7 @@ import service from "./pages-data/service";
 import career from "./pages-data/career";
 import contacts from "./pages-data/contacts";
 import product from "./pages-data/product";
+import categories from "./pages-data/categories";
 
 const pagesConfig = {
   ...home,
@@ -16,6 +17,7 @@ const pagesConfig = {
   ...career,
   ...contacts,
   ...product,
+  ...categories,
 };
 
 export default pagesConfig;
