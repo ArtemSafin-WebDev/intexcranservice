@@ -14,7 +14,7 @@ export default {
         chunkFileNames: `assets/main.js`,
         assetFileNames: `assets/main.[ext]`,
       },
-      input: glob.sync(path.resolve(__dirname, "*.html")),
+      input: glob.sync("*.html").map((file) => path.resolve(__dirname, file)),
     },
   },
   server: {

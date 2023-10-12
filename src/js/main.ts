@@ -20,6 +20,7 @@ import benefits from "./benefits";
 import employeeReviews from "./employeeReviews";
 import fileUpload from "./fileUpload";
 import contacts from "./contacts";
+import productInfo from "./productInfoSlider";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   employeeReviews();
   fileUpload();
   contacts();
+  productInfo();
 });
 
 window.addEventListener("load", () => {
