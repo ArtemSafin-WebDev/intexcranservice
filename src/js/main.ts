@@ -22,6 +22,9 @@ import fileUpload from "./fileUpload";
 import contacts from "./contacts";
 import productInfo from "./productInfoSlider";
 
+import catalogSelects from "./catalogSelects";
+import rangeSliders from "./rangeSliders";
+
 document.addEventListener("DOMContentLoaded", () => {
   menu();
   tabs();
@@ -44,6 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fileUpload();
   contacts();
   productInfo();
+  catalogSelects();
+  // catalog();
+  rangeSliders();
 });
 
 window.addEventListener("load", () => {

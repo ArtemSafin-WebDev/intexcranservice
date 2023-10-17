@@ -1,0 +1,149 @@
+.catalog {
+  @include blockWrapper;
+  margin-bottom: 6rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 5rem;
+  }
+}
+
+.catalog__content {
+  @include blockContent;
+  border-radius: 2rem;
+
+  padding: var(--side-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+
+  @include breakpoint(mobile) {
+    border-radius: 1.5rem;
+    gap: 3rem;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
+  }
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 2rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.catalog__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid white;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: #02073e;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 2rem;
+    border-radius: 0.6rem;
+  }
+}
+
+.catalog__card-title {
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+  }
+}
+
+.catalog__card-image-container {
+  align-self: center;
+  width: 80%;
+  margin-bottom: 1.2rem;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 0.8rem;
+  }
+}
+
+.catalog__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.catalog__card-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  @include breakpoint(mobile) {
+    gap: 1rem;
+  }
+}
+
+.catalog__card-specs-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.catalog__card-specs-card-key {
+  color: #a2a5c3;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.catalog__card-specs-card-value {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: right;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

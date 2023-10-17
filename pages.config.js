@@ -7,6 +7,7 @@ import career from "./pages-data/career";
 import contacts from "./pages-data/contacts";
 import product from "./pages-data/product";
 import categories from "./pages-data/categories";
+import catalog from "./pages-data/catalog";
 
 const pagesConfig = {
   ...home,
@@ -18,6 +19,7 @@ const pagesConfig = {
   ...contacts,
   ...product,
   ...categories,
+  ...catalog,
 };
 
 export default pagesConfig;
